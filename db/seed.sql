@@ -7,34 +7,53 @@ INSERT INTO departments (name)
 
 
 
-INSERT INTO roles (role_id, job_title, department, salary)
+INSERT INTO role (title, salary, department_id)
 VALUES
-    ('a', 'b', 'c', 'd'),
-    ('a', 'b', 'c', 'd'),
-    ('a', 'b', 'c', 'd'),
-    ('a', 'b', 'c', 'd'),
-    ('a', 'b', 'c', 'd'),
-    ('a', 'b', 'c', 'd'),
-    ('a', 'b', 'c', 'd'),
-    ('a', 'b', 'c', 'd'),
-    ('a', 'b', 'c', 'd'),
-    ('a', 'b', 'c', 'd');
+    ('Lead Front-end Engineer', 100000, 'c'),
+    ('Lead Back-end Engineer', 110000, 'c'),
+    ('Back-end Engineer', 70000, 'c'),
+    ('Front-end Engineer', 60000, 'c'),
+    ('Manager', 120000, 'c');
+
+
+'Lead Front-end Engineer', 'Front-end', '100000', 'Jack'
+'Front-end Manager', 'Managers', '120000', NULL
+'Front-end Engineer', 'Front-end', '60000', 'Jack'
+'Back-end Engineer', 'Back-end', '70000', 'Sandy'
+'Lead Back-end Engineer', 'Back-end', '110000', 'Sandy'
+'Back-end Manager', 'Managers', '120000', NULL
 
 
 
-INSERT INTO employees (first_name, last_name, job_title, department, salary, manager)
+INSERT INTO employees (first_name, last_name, role_id,  manager_id)
 VALUES
-  ('James', 'Fraser', 'Lead Front-end Engineer', 'Front-end', '100000', 'Jack'),
-  ('Jack', 'London', 'Front-end Manager', 'Managers', '120000', NULL),
-  ('Robert', 'Bruce', 'Front-end Engineer', 'Front-end', '60000', 'Jack'),
-  ('Peter', 'Greenaway', 'Front-end Engineer', 'Front-end', '60000', 'Jack'),
-  ('Derek', 'Jarman', 'Back-end Engineer', 'Back-end', '70000', 'Sandy'),
-  ('Paolo', 'Pasolini', 'Lead Back-end Engineer', 'Back-end', '110000', 'Sandy'),
-  ('Heathcote', 'Williams', 'Front-end Engineer', 'Front-end', '60000', 'Jack'),
-  ('Sandy', 'Powell', 'Back-end Manager', 'Managers', '120000', NULL),
-  ('Emil', 'Zola', 'Back-end Engineer', 'Back-end', '70000', 'Sandy'),
-  ('Sissy', 'Coalpits', 'Back-end Engineer', 'Back-end', '70000', 'Sandy'),
-  ('Antoinette', 'Capet', 'Back-end Engineer', 'Back-end', '70000', 'Sandy');
+  ('James', 'Fraser', ),
+  ('Jack', 'London', ),
+  ('Robert', 'Bruce', ),
+  ('Peter', 'Greenaway', ),
+  ('Derek', 'Jarman', '),
+  ('Paolo', 'Pasolini', ),
+  ('Heathcote', 'Williams', ),
+  ('Sandy', 'Powell', ),
+  ('Emil', 'Zola', ),
+  ('Sissy', 'Coalpits', ),
+  ('Antoinette', 'Capet', );
+
+
+
+
+
+-- 'Lead Front-end Engineer', 'Front-end', '100000', 'Jack'
+-- 'Front-end Manager', 'Managers', '120000', NULL
+-- 'Front-end Engineer', 'Front-end', '60000', 'Jack'
+-- 'Front-end Engineer', 'Front-end', '60000', 'Jack'
+-- 'Back-end Engineer', 'Back-end', '70000', 'Sandy'
+-- 'Lead Back-end Engineer', 'Back-end', '110000', 'Sandy'
+-- 'Front-end Engineer', 'Front-end', '60000', 'Jack'
+-- 'Back-end Manager', 'Managers', '120000', NULL
+-- 'Back-end Engineer', 'Back-end', '70000', 'Sandy'
+-- 'Back-end Engineer', 'Back-end', '70000', 'Sandy'
+-- 'Back-end Engineer', 'Back-end', '70000', 'Sandy'
 
 
 --   ('Samuel', 'Delany', 'sdelany@dhalgren.com'),
