@@ -1,6 +1,21 @@
 const db = require("./db/connection");
 const inquirer = require("inquirer");
 
+ db.query("SELECT * FROM department", function(err, result){
+    if (err) throw err
+    console.table(result)
+  })
+
+    db.query("SELECT * FROM role", function(err, result){
+    if (err) throw err
+    console.table(result)
+})
+
+  db.query("SELECT * FROM employee", function(err, result){
+    if (err) throw err
+    console.table(result)
+  doMore();
+})
 
 function getDepartments() {
 db.connect(function(err) {
@@ -63,13 +78,23 @@ function addRole(a) {
     inquirer.prompt([
     // First question of what i want to do
     {
-      name: "role",
+      name: "rTitle",
       type: "input",
-      message: "What is the new role you are adding?"
+      message: "What is the title of this role?"
+    },
+    {
+      name: "rSalary",
+      type: "input",
+      message: "What is the salary of this role?"
+    },
+    {
+      name: "rDept",
+      type: "input",
+      message: "What is the department id of this role?"
     },
   ])
   .then(data => {
-  db.query(`INSERT INTO department(name) VALUES ('${data.dept}')`, function(error, result){
+  db.query(`INSERT INTO role(name) VALUES ('${data.dept}')`, function(error, result){
     if (err) throw err
     console.table(result)
 })
@@ -84,13 +109,23 @@ function addEmployee(a) {
     inquirer.prompt([
     // First question of what i want to do
     {
-      name: "employee",
+      name: "eFirstName",
       type: "input",
-      message: "Who is the new employee you are adding?"
+      message: "What is the employees first name?"
+    },
+    {
+      name: "eLastName",
+      type: "input",
+      message: "What is the employees last name?"
+    },
+    {
+      name: "eRole",
+      type: "input",
+      message: "What is the id of this employees role?"
     },
   ])
   .then(data => {
-  db.query(`INSERT INTO department(name) VALUES ('${data.dept}')`, function(error, result){
+  db.query(`INSERT INTO employee(name) VALUES ('${data.dept}')`, function(error, result){
     if (err) throw err
     console.table(result)
 })
@@ -145,7 +180,7 @@ if(data.questions === "update an employee role"){
     });
 }
 
-doMore();
+
 // const addingDept = () => {
 // inquirer
 
